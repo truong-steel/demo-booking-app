@@ -22,7 +22,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class HomestayController {
     @Autowired
-    private HomestayService homestayService;
+    private final HomestayService homestayService;
 
     @GetMapping("/api/homestays")
     public Page<HomestayDto> getAllHomestay(HomestayFilterForm form , Pageable pageable){

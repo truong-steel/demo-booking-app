@@ -27,15 +27,19 @@ public class Homestay {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "description")
+    @Column(name = "description" , length = 2000)
     private String description;
 
-    @Column(name= "homestay_img")
-    private Blob homestayImg;
+    @Column(name="homestay_image")
+    private String homestayImage;
+
+    @Column(name = "rating" , length = 1)
+    private String rating;
+
+    @Column(name = "lowest_price")
+    private String lowestPrice;
 
     @OneToMany(mappedBy = "homestay" , cascade = CascadeType.ALL)
     private List<Room> rooms;
+
 }

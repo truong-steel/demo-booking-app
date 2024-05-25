@@ -17,11 +17,12 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class RoomDto extends RepresentationModel<RoomDto> {
     private Long id;
 
-    private BigDecimal price ;
+    private BigDecimal roomPrice ;
 
     private Blob roomImage;
 
     private String roomDescription;
+    private String roomType;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

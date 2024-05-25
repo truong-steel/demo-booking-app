@@ -27,7 +27,9 @@ public class HomestayDto extends RepresentationModel<HomestayDto> {
 
     private String description;
 
-    private Blob homestayImg;
+    private String homestayImage;
+
+    private String rating;
 
     private LocalDateTime createdAt;
 

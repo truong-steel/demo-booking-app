@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 @Service
@@ -28,6 +29,13 @@ public class HomestayServiceImpl implements HomestayService {
         return homestayRepository.findAll( spec ,pageable)
                 .map(homestay -> modelMapper.map(homestay,HomestayDto.class).withSelfRel());
     }
+
+//    @Override
+//    public List<HomestayDto> findByParameters(String city, LocalDate startDate, LocalDate endDate) {
+//         return homestayRepository.findAllByCityDateAndTotalGuest(city , startDate , endDate )
+//                 .map(homestay -> modelMapper.map(homestay , HomestayDto.class).withSelfRel());
+//
+//    }
 
     @Override
     public HomestayDto findById(Long id) {

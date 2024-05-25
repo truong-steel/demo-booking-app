@@ -29,8 +29,8 @@ public class RoomServiceImpl implements RoomService{
         var homestay = homestayRepository.findById(homestayId).orElse(null);
         var room = modelMapper.map(form , Room.class);
         room.setHomestay(homestay);
-        var savedComment = roomRepository.save(room);
-        return modelMapper.map(savedComment,RoomDto.class);
+        var savedRoom = roomRepository.save(room);
+        return modelMapper.map(savedRoom,RoomDto.class);
     }
 
     @Override

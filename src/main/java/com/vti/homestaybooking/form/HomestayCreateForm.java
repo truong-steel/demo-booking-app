@@ -17,9 +17,6 @@ public class HomestayCreateForm {
     private String name;
     @NotBlank
     @Length(max = 255)
-    private String address;
-    @NotBlank
-    @Length(max = 255)
     private String city;
     @NotBlank
     @Length(max = 255)
@@ -30,6 +27,8 @@ public class HomestayCreateForm {
     @NotBlank
     @Length(max = 255)
     private BigDecimal lowestPrice;
-    @Lob
-    private Blob image;
+    @NotBlank
+    private String homestayImage;
+    @Length(max=1)
+    private String rating;
 }

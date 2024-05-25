@@ -32,7 +32,7 @@ public class RoomController {
 
     @PostMapping("/api/homestays/{homestayId}/rooms")
     @ResponseStatus(HttpStatus.CREATED)
-    public RoomDto create(Long homestayId , RoomCreateForm form) {
+    public RoomDto create(@PathVariable("homestayId") Long homestayId ,@RequestBody RoomCreateForm form) {
         return roomService.create(homestayId , form);
     }
     @GetMapping("/api/rooms")

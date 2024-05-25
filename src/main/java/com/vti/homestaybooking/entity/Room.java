@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.io.File;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,10 +20,10 @@ public class Room {
     private Long id;
 
     @Column(name = "room_price")
-    private BigDecimal price ;
+    private BigDecimal roomPrice ;
 
-    @Column(name ="room_image")
-    private Blob roomImage;
+    @Column(name = "room_type")
+    private String roomType;
 
     @Column(name = "room_description")
     private String roomDescription;
@@ -30,5 +31,8 @@ public class Room {
     @ManyToOne
     @JoinColumn(name="homestay_id" , nullable = false)
     private Homestay homestay;
+
+    @OneToMany(mappedBy = "room" , cascade = CascadeType.ALL)
+    private List<UserRoom> userRooms;
 
 }

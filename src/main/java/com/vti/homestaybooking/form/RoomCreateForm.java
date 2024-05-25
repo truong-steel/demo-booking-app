@@ -13,13 +13,13 @@ import java.sql.Blob;
 public class RoomCreateForm {
     @NotBlank
     @Length(max = 255)
-    private String type;
+    private String roomType;
     @NotBlank
-    private Blob image;
-    @NotBlank
-    @Length(max = 255)
-    private String description;
+    private Blob roomImage;
     @NotBlank
     @Length(max = 255)
-    private BigDecimal price;
+    private String roomDescription;
+    @NotBlank
+    @Length(max = 255)
+    private BigDecimal roomPrice;
 }
