@@ -4,13 +4,15 @@ import com.vti.homestaybooking.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class UserDto {
     private Long id;
-    private String name;
-    private String username;
     private String email;
+    private String token;
     private String password;
-    private User.Role role;
+    private List<String> roles;
+
 }
